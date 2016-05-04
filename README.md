@@ -1,4 +1,4 @@
-# Feed-Read
+# Feed-Read-Parser
 
 [Node.js](http://nodejs.org/) module for parsing RSS and ATOM feeds into
 a common article object.
@@ -7,11 +7,11 @@ This module is forked from [feed-read](https://www.npmjs.com/package/feed-read) 
 
 # Installation
 
-    $ npm install feed-read
+    $ npm install feed-read-parser
 
 # Usage
 
-    var feed = require("feed-read");
+    var feed = require("feed-read-parser");
 
 ## `feed(url, callback)`
 Fetch a feed.

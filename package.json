@@ -2,9 +2,9 @@
 , "version":     "0.0.2"
 , "description": "a node ATOM and RSS feed parser"
 , "keywords":    ["atom", "rss", "feed", "parser"]
-, "homepage":    "https://github.com/leyluiaa/feed-read"
+, "homepage":    "https://github.com/leyluiaa/feed-read-parser"
 , "bugs":
-  { "url":  "https://github.com/leyluiaa/feed-read/issues"
+  { "url":  "https://github.com/leyluiaa/feed-read-parser/issues"
   }
 , "author":
   { "name": "leyluiaa"
@@ -19,7 +19,7 @@
 
 , "repository":
   { "type": "git"
-  , "url":  "https://github.com/leyluiaa/feed-read.git"
+  , "url":  "https://github.com/leyluiaa/feed-read-parser.git"
   }
 
 , "dependencies":
