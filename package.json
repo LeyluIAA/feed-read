@@ -1,38 +1,40 @@
-{ "name":        "feed-read-parser"
-, "version":     "0.0.2"
-, "description": "a node ATOM and RSS feed parser"
-, "keywords":    ["atom", "rss", "feed", "parser"]
-, "homepage":    "https://github.com/leyluiaa/feed-read-parser"
-, "bugs":
-  { "url":  "https://github.com/leyluiaa/feed-read-parser/issues"
+{
+  "name": "feed-read-parser",
+  "version": "0.0.3",
+  "description": "a node ATOM and RSS feed parser",
+  "keywords": [
+    "atom",
+    "rss",
+    "feed",
+    "parser"
+  ],
+  "homepage": "https://github.com/leyluiaa/feed-read-parser",
+  "bugs": {
+    "url": "https://github.com/leyluiaa/feed-read-parser/issues"
+  },
+  "author": {
+    "name": "leyluiaa",
+    "url": "http://leyluiaa.github.com/"
+  },
+  "main": "./index",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leyluiaa/feed-read-parser.git"
+  },
+  "dependencies": {
+    "request": "2.x.x",
+    "sax": "0.3.x",
+    "underscore": "1.x.x"
+  },
+  "devDependencies": {
+    "should": "0.x.x",
+    "mocha": "0.x.x",
+    "connect": "1.x.x"
+  },
+  "engines": {
+    "node": ">=0.4.1"
   }
-, "author":
-  { "name": "leyluiaa"
-  , "url":  "http://leyluiaa.github.com/"
-  }
-
-, "main": "./index"
-, "scripts":
-  { "test": "mocha"
-  }
-
-
-, "repository":
-  { "type": "git"
-  , "url":  "https://github.com/leyluiaa/feed-read-parser.git"
-  }
-
-, "dependencies":
-  { "request":    "2.x.x"
-  , "sax":        "0.3.x"
-  , "underscore": "1.x.x"
-  }
-
-, "devDependencies":
-  { "should":  "0.x.x"
-  , "mocha":   "0.x.x"
-  , "connect": "1.x.x"
-  }
-
-, "engines": { "node": ">=0.4.1" }
 }
