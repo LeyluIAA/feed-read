@@ -25,6 +25,7 @@
     "url": "https://github.com/leyluiaa/feed-read-parser.git"
   },
   "dependencies": {
+    "moment": "^2.13.0",
     "request": "2.x.x",
     "sax": "0.3.x",
     "underscore": "1.x.x"

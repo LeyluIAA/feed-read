@@ -3,7 +3,7 @@
 [Node.js](http://nodejs.org/) module for parsing RSS and ATOM feeds into
 a common article object.
 
-This module is forked from [feed-read](https://www.npmjs.com/package/feed-read) npm module. This module aims to fix old bugs in the forked version.
+This module is forked from [feed-read](https://www.npmjs.com/package/feed-read) npm module. It aims to fix old bugs in the forked version.
 
 # Installation
 
@@ -29,6 +29,23 @@ Fetch a feed.
       //
     });
 
+## `feed(array, callback)`
+Fetch several feed thanks to a given array
+
+    var rss = [
+      'http://www.eurogamer.net/?format=rss',
+      'http://fr.ign.com/feed.xml',
+      'http://www.gamekult.com/feeds/actu.html'
+    ]
+
+    feed(rss, function(err, articles) {
+        if (err) throw err;
+
+        // articles is an array of article with properties described above.
+
+        callback();
+    });
+
 ## `feed.rss(rss_string, callback)`
 Parse a string of XML as RSS.
 
@@ -47,4 +64,3 @@ Returns `false` when it is neither RSS or ATOM.
 
 # License
 See LICENSE.
-

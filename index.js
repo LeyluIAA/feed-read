@@ -1,6 +1,7 @@
 var request    = require('request')
   , sax        = require('sax')
-  , _          = require('underscore');
+  , _          = require('underscore')
+  , moment     = require('moment');
 
 
 // Public: Fetch the articles from the RSS or ATOM feed.
@@ -183,7 +184,15 @@ FeedRead.rss = function(xml, source, callback) {
           , link:      child_data(art, "link")
           , feed:      meta
           };
-        if (obj.published) obj.published = new Date(obj.published);
+        if (obj.published) {
+          var slash = obj.published.match('/*\/*/');
+          if (slash) {
+            var moment_obj = moment(obj.published, 'MM/DD/YYYY - HH:mm');
+            obj.published = moment_obj.toDate();
+          } else {
+            obj.published = new Date(obj.published);
+          }
+        }
         return obj;
       }
     ), function(art) { return !!art; }));
