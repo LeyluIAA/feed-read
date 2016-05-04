@@ -30,7 +30,7 @@ Fetch a feed.
     });
 
 ## `feed(array, callback)`
-Fetch several feed thanks to a given array
+Fetch several feeds thanks to a given array
 
     var rss = [
       'http://www.eurogamer.net/?format=rss',
@@ -40,10 +40,7 @@ Fetch several feed thanks to a given array
 
     feed(rss, function(err, articles) {
         if (err) throw err;
-
         // articles is an array of article with properties described above.
-
-        callback();
     });
 
 ## `feed.rss(rss_string, callback)`
