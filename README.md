@@ -1,9 +1,9 @@
 # Feed-Read
 
-[![Build Status](https://secure.travis-ci.org/sentientwaffle/feed-read.png?branch=master)](http://travis-ci.org/sentientwaffle/feed-read)
-
 [Node.js](http://nodejs.org/) module for parsing RSS and ATOM feeds into
 a common article object.
+
+This module is forked from [feed-read](https://www.npmjs.com/package/feed-read) npm module. This module aims to fix old bugs in the forked version.
 
 # Installation
 
@@ -19,14 +19,14 @@ Fetch a feed.
     feed("http://craphound.com/?feed=rss2", function(err, articles) {
       if (err) throw err;
       // Each article has the following properties:
-      // 
+      //
       //   * "title"     - The article title (String).
       //   * "author"    - The author's name (String).
       //   * "link"      - The original article link (String).
       //   * "content"   - The HTML content of the article (String).
       //   * "published" - The date that the article was published (Date).
       //   * "feed"      - {name, source, link}
-      // 
+      //
     });
 
 ## `feed.rss(rss_string, callback)`
