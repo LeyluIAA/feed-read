@@ -31,6 +31,7 @@
     "underscore": "1.x.x"
   },
   "devDependencies": {
+    "iconv-lite": "^0.4.8",
     "should": "0.x.x",
     "mocha": "0.x.x",
     "connect": "1.x.x"
