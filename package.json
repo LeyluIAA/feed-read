@@ -28,10 +28,10 @@
     "moment": "^2.13.0",
     "request": "2.x.x",
     "sax": "0.3.x",
-    "underscore": "1.x.x"
+    "underscore": "1.x.x",
+    "iconv-lite": "^0.4.8",
   },
   "devDependencies": {
-    "iconv-lite": "^0.4.8",
     "should": "0.x.x",
     "mocha": "0.x.x",
     "connect": "1.x.x"
