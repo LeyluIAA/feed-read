@@ -70,7 +70,8 @@ FeedRead.identifyCharset = function(response) {
 // callback - Receives `(err, articles)`.
 //
 FeedRead.get = function(feed_url, callback) {
-  request(feed_url, {timeout: 5000}, function(err, res, body) {
+  request(feed_url, {timeout: 5000})
+    .pipe(iconv.decodeStream('win1251')).collect(function(err, body) { 
     if (err) return callback(err);
     var type = FeedRead.identify(body);
     if (type == "atom") {
