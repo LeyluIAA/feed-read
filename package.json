@@ -29,7 +29,7 @@
     "request": "2.x.x",
     "sax": "0.3.x",
     "underscore": "1.x.x",
-    "iconv-lite": "^0.4.8"
+    "iconv-lite": "^0.4.8",
   },
   "devDependencies": {
     "should": "0.x.x",
