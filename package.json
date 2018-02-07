@@ -1,6 +1,6 @@
 {
   "name": "feed-read-parser",
-  "version": "0.0.4",
+  "version": "1.0.5",
   "description": "a node ATOM and RSS feed parser",
   "keywords": [
     "atom",
