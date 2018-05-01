@@ -1,13 +1,14 @@
 var feed    = require('../')
   , should  = require('should')
   , connect = require('connect')
+  , srvStat = require('serve-static')
   , _       = require('underscore')
   , fs      = require('fs');
 
 
 // Serve the fixtures.
-connect()
-  .use(connect.static(__dirname + "/fixtures"))
+let server = connect()
+  .use(srvStat(__dirname + "/fixtures"))
   .listen(4478);
 
 var host = "http://127.0.0.1:4478";
@@ -69,7 +70,7 @@ describe("feed", function() {
       
       it("is an Array of articles", function() {
         articles.should.be.an.instanceof(Array);
-        articles[0].title.should.be.a("string");
+        articles[0].title.should.be.a.String();
       });
     });
   });
@@ -87,8 +88,8 @@ describe("feed", function() {
       if (err) return done(err);
       articles.should.be.an.instanceof(Array);
       _.each(articles, function(art) {
-        art.title.should.be.a("string");
-        art.feed.source.should.include(host);
+        art.title.should.be.a.String();
+        art.feed.source.should.containEql(host);
       });
       done();
     });
@@ -138,7 +139,7 @@ describe("feed", function() {
       });
       
       it("has content", function() {
-        articles[0].content.should.include("Installing the plugin");
+        articles[0].content.should.containEql("Installing the plugin");
       });
       
       it("has a published date", function() {
@@ -191,8 +192,8 @@ describe("feed", function() {
       });
       
       it("has content", function() {
-        articles[0].content.should.include("Here's a podcast of my last");
-        articles[0].content.should.include("John Taylor Williams is a full-time");
+        articles[0].content.should.containEql("Here's a podcast of my last");
+        articles[0].content.should.containEql("John Taylor Williams is a full-time");
       });
       
       it("has a published date", function() {
@@ -220,7 +221,7 @@ describe("feed", function() {
       
       it("has a published date", function() {
         var date = articles[0].published;
-        date.getDate().should.eql(27);
+        date.getDate().should.eql(28);
         date.getMonth().should.eql(3);
         date.getFullYear().should.eql(2010);
       });
@@ -263,4 +264,10 @@ describe("feed", function() {
       });
     });
   });
+
+  after(function () {
+    // stop listening so test exits
+    server.close();
+  });
+
 });
