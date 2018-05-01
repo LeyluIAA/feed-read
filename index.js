@@ -4,7 +4,6 @@ var request    = require('request')
   , moment     = require('moment')
   , iconv      = require('iconv-lite');
 
-
 // Public: Fetch the articles from the RSS or ATOM feed.
 //
 // url      - The String feed url, or an Array of urls.
@@ -192,6 +191,7 @@ FeedRead.rss = function(xml, source, callback) {
           , author:    child_data(art, "author")
                     || child_data(art, "dc:creator")
           , link:      child_data(art, "link")
+          , enclosure: child_attributes(art, "enclosure")
           , feed:      meta
           };
         if (obj.published) {
@@ -311,4 +311,14 @@ function child_data(parent, name) {
   var children = node.children;
   if (!children.length) return "";
   return children.join("");
+}
+
+// Internal: Get the first child of `parent` with `name`,
+// and return its attributes.
+function child_attributes(parent, name) {
+  var node     = child_by_name(parent, name)
+  if (!node) return "";
+  var attributes = node.attributes
+  if (!attributes.length) return {};
+  return attributes;
 }

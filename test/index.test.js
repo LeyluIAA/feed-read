@@ -204,6 +204,14 @@ describe("feed", function() {
         articles[0].feed.name.should.eql("Cory Doctorow's craphound.com");
         articles[0].feed.link.should.eql("http://craphound.com");
       });
+
+      it("has enclosure", function() {
+        should(articles[0].enclosure).be.an.Object();
+      });
+      it("enclosure has url", function() {
+        should(articles[0].enclosure.url).be.a.String();
+      });
+
     });
     
     describe("a google news RSS feed", function() {
